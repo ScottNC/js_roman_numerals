@@ -1,5 +1,5 @@
 const romanNumeral = 'I';
 
 export function numToRoman(num) {
-    return romanNumeral.repeat(num);
+    return num === 5? 'V' : romanNumeral.repeat(num);
 }
