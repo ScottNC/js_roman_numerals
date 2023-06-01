@@ -4,5 +4,12 @@ const ROMAN_NUMERALS = {
 };
 
 export function numToRoman(num) {
-    return num === 5? ROMAN_NUMERALS[5] : ROMAN_NUMERALS[1].repeat(num);
+    switch (num) {
+        case 5:
+            return ROMAN_NUMERALS[5];
+        case 4:
+            return ROMAN_NUMERALS[1] + ROMAN_NUMERALS[5];
+        default:
+            return ROMAN_NUMERALS[1].repeat(num);
+    }
 }
