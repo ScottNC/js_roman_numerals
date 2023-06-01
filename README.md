@@ -7,3 +7,9 @@ Test Cases:
 3. 3 returns "III"
 4. 5 returns "V"
 5. 4 returns "IV"
+
+6. 6 returns "VI"
+7. 8 returns "VIII"
+
+8. 10 returns "X"
+9. 9 returns "IX"

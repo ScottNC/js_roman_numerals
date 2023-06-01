@@ -19,3 +19,7 @@ test('5 returns V', () => {
 test('4 returns IV', () => {
     expect(numToRoman(4)).toBe('IV');
 });
+
+test('6 returns VI', () => {
+    expect(numToRoman(6)).toBe('VI');
+});

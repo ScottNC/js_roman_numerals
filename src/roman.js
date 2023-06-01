@@ -5,6 +5,8 @@ const ROMAN_NUMERALS = {
 
 export function numToRoman(num) {
     switch (num) {
+        case 6:
+            return ROMAN_NUMERALS[5] + ROMAN_NUMERALS[1];
         case 5:
             return ROMAN_NUMERALS[5];
         case 4:
