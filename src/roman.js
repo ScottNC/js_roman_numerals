@@ -1,3 +1,5 @@
+const romanNumeral = 'I';
+
 export function numToRoman(num) {
-    return 'I'.repeat(num);
+    return romanNumeral.repeat(num);
 }
