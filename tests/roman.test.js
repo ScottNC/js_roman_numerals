@@ -7,3 +7,7 @@ test('1 returns I', () => {
 test('2 returns II', () => {
     expect(numToRoman(2)).toBe('II');
 });
+
+test('3 returns III', () => {
+    expect(numToRoman(3)).toBe('III');
+});
