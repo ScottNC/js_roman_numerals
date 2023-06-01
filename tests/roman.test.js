@@ -27,3 +27,8 @@ test('6 returns VI', () => {
 test('8 returns VIII', () => {
     expect(numToRoman(8)).toBe('VIII');
 });
+
+test('10 returns X', () => {
+    expect(numToRoman(10)).toBe('X');
+});
+

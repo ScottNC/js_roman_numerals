@@ -1,10 +1,13 @@
 const ROMAN_NUMERALS = {
     1: 'I',
-    5: 'V'
+    5: 'V',
+    10: 'X'
 };
 
 export function numToRoman(num) {
     let roman = '';
+
+    if (num === 10) return ROMAN_NUMERALS[10];
 
     if (num > 5) {
         roman += ROMAN_NUMERALS[5];
