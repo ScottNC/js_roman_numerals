@@ -9,7 +9,7 @@ export function numToRoman(num) {
 
     if (num === 10) return ROMAN_NUMERALS[10];
 
-    if (num > 5) {
+    if (num >= 5) {
         roman += ROMAN_NUMERALS[5];
         num -= 5;
     }
@@ -18,12 +18,5 @@ export function numToRoman(num) {
 };
 
 function romanFiveOrLess(num) {
-    switch (num) {
-        case 5:
-            return ROMAN_NUMERALS[5];
-        case 4:
-            return ROMAN_NUMERALS[1] + ROMAN_NUMERALS[5];
-        default:
-            return ROMAN_NUMERALS[1].repeat(num);
-    }
+    return num === 4 ? ROMAN_NUMERALS[1] + ROMAN_NUMERALS[5]: ROMAN_NUMERALS[1].repeat(num);
 }
