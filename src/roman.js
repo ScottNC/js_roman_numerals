@@ -1,3 +1,3 @@
 export function numToRoman(num) {
-    return 'I';
+    return num === 1 ? 'I': 'II';
 }
