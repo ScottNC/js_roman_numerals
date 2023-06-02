@@ -32,9 +32,9 @@ test('10 returns X', () => {
     expect(numToRoman(10)).toBe('X');
 });
 
-// test('9 returns IX', () => {
-//     expect(numToRoman(9)).toBe('IX');
-// });
+test('9 returns IX', () => {
+    expect(numToRoman(9)).toBe('IX');
+});
 
 
 

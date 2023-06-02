@@ -5,18 +5,16 @@ const ROMAN_NUMERALS = {
 };
 
 export function numToRoman(num) {
-    let roman = '';
+    if (ROMAN_NUMERALS[num]) return ROMAN_NUMERALS[num];
 
-    if (num === 10) return ROMAN_NUMERALS[10];
+    if (ROMAN_NUMERALS[num + 1]) return ROMAN_NUMERALS[1] + ROMAN_NUMERALS[num + 1];
+
+    let roman = '';
 
     if (num >= 5) {
         roman += ROMAN_NUMERALS[5];
         num -= 5;
     }
 
-    return roman + romanFiveOrLess(num);
+    return roman + ROMAN_NUMERALS[1].repeat(num);
 };
-
-function romanFiveOrLess(num) {
-    return num === 4 ? ROMAN_NUMERALS[1] + ROMAN_NUMERALS[5]: ROMAN_NUMERALS[1].repeat(num);
-}
