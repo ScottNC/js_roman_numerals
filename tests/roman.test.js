@@ -72,9 +72,9 @@ describe("romanToNum", () => {
         expect(romanToNum('I')).toBe(1);
     });
 
-    // test('II returns 2', () => {
-    //     expect(romanToNum('II')).toBe(2);
-    // });
+    test('II returns 2', () => {
+        expect(romanToNum('II')).toBe(2);
+    });
 
     // test('III returns 3', () => {
     //     expect(romanToNum('III')).toBe(3);

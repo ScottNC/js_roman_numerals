@@ -26,5 +26,5 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    return 1;
+    return roman.length;
 }
