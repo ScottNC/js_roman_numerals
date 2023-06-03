@@ -38,15 +38,15 @@ export function romanToNum(roman) {
             else if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
                 num += 9 * power;
             else if (currentRoman.startsWith(ROMAN_NUMERALS[power][5]))
-                num += (5 + currentRoman.length - 1) * power;
+                num += (4 + currentRoman.length) * power;
             else
-                num += currentRoman.length * power
+                num += currentRoman.length * power;
 
-            roman = roman.slice(cutOff);;
+            roman = roman.slice(cutOff);
         }
 
         return num;
-    }, 0)
+    }, 0);
 };
 
 function findCutOff (roman, power) {
