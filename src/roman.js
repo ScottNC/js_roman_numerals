@@ -26,14 +26,21 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    if (roman === ROMAN_NUMERALS[1][1] + ROMAN_NUMERALS[1][5])
-        return 4;
-    if (roman === ROMAN_NUMERALS[1][1] + ROMAN_NUMERALS[10][1])
-        return 9;
-    if (roman === ROMAN_NUMERALS[10][1])
-        return 10;
-    if (roman.startsWith(ROMAN_NUMERALS[1][5]))
-        return 5 + roman.length - 1;
+    const powersOfTen = Object.keys(ROMAN_NUMERALS).sort((a, b) => b - a).slice(1);
+    let num = 0;
 
-    return roman.length;
+    powersOfTen.forEach(power => {
+        if (roman.startsWith(ROMAN_NUMERALS[power][1]) || roman.startsWith(ROMAN_NUMERALS[power][5]) ) {
+            if (roman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
+                num += 4 * power;
+            else if (roman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
+                num += 9 * power;
+            else if (roman.startsWith(ROMAN_NUMERALS[power][5]))
+                num += (5 + roman.length - 1) * power;
+            else
+                num += roman.length * power;
+        }
+    })
+
+    return num;
 };

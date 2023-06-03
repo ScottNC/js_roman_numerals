@@ -104,13 +104,13 @@ describe("romanToNum", () => {
         expect(romanToNum('IX')).toBe(9);
     });
 
-    // test('multiples of ten', () => {
-    //     expect(romanToNum('XX')).toBe(20);
-    //     expect(romanToNum('XL')).toBe(40);
-    //     expect(romanToNum('L')).toBe(50);
-    //     expect(romanToNum('LX')).toBe(60);
-    //     expect(romanToNum('LXXX')).toBe(80);
-    // });
+    test('multiples of ten', () => {
+        expect(romanToNum('XX')).toBe(20);
+        expect(romanToNum('XL')).toBe(40);
+        expect(romanToNum('L')).toBe(50);
+        expect(romanToNum('LX')).toBe(60);
+        expect(romanToNum('LXXX')).toBe(80);
+    });
 
     // test('XC returns 90', () => {
     //     expect(romanToNum('XC')).toBe(90);
