@@ -27,13 +27,12 @@ export function numToRoman(num) {
 
 export function romanToNum(roman) {
     const powersOfTen = Object.keys(ROMAN_NUMERALS).sort((a, b) => b - a).slice(1);
-    let num = 0;
 
-    powersOfTen.forEach(power => {
+    return powersOfTen.reduce((num, power) => {
         const firstOne = roman.indexOf(ROMAN_NUMERALS[power/10]?.[1]);
         const firstFive = roman.indexOf(ROMAN_NUMERALS[power/10]?.[5]);
 
-        if (roman.startsWith(ROMAN_NUMERALS[power][1]) || roman.startsWith(ROMAN_NUMERALS[power][5]) ) {
+        if (Object.values(ROMAN_NUMERALS[power]).includes(roman[0])) {
             let currentRoman = roman;
 
             let cutOff;
@@ -43,7 +42,6 @@ export function romanToNum(roman) {
                 currentRoman = roman.slice(0, cutOff);
             }
 
-            console.log(currentRoman, firstFive, firstOne);
             if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
                 num += 4 * power;
             else if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
@@ -55,8 +53,8 @@ export function romanToNum(roman) {
 
             roman = roman.slice(cutOff);
         }
-    })
 
-    return num;
+        return num;
+    }, 0)
 };
 
