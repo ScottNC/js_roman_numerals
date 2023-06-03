@@ -65,6 +65,14 @@ describe("numToRoman", () => {
         expect(numToRoman(900)).toBe('CM');
         expect(numToRoman(1000)).toBe('M');
     })
+
+    test('100n + a', () => {
+        expect(numToRoman(104)).toBe('CIV');
+        expect(numToRoman(450)).toBe('CDL');
+        expect(numToRoman(531)).toBe('DXXXI');
+        expect(numToRoman(687)).toBe('DCLXXXVII');
+        expect(numToRoman(999)).toBe('CMXCIX');
+    })
 });
 
 describe("romanToNum", () => {
