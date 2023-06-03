@@ -24,3 +24,7 @@ export function numToRoman(num) {
         return roman;
     }, '');
 };
+
+export function romanToNum(roman) {
+    return 1;
+}
