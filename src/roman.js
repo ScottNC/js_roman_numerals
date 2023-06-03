@@ -26,9 +26,15 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
+    let num = 0;
+
+    if (roman.startsWith('V')) {
+        roman = roman.slice(1);
+        num += 5
+    };
+
     switch (roman) {
-        case 'IV': return 4
-        case 'V': return 5
-        default: return roman.length;
+        case 'IV': return num + 4
+        default: return num + roman.length;
     };
 };
