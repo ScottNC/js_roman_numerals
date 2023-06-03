@@ -76,9 +76,9 @@ describe("romanToNum", () => {
         expect(romanToNum('II')).toBe(2);
     });
 
-    // test('III returns 3', () => {
-    //     expect(romanToNum('III')).toBe(3);
-    // });
+    test('III returns 3', () => {
+        expect(romanToNum('III')).toBe(3);
+    });
 
     // test('V returns 5', () => {
     //     expect(romanToNum('V')).toBe(5);
