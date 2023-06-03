@@ -26,17 +26,14 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    let num = 0;
+    if (roman === ROMAN_NUMERALS[1][1] + ROMAN_NUMERALS[1][5])
+        return 4;
+    if (roman === ROMAN_NUMERALS[1][1] + ROMAN_NUMERALS[10][1])
+        return 9;
+    if (roman === ROMAN_NUMERALS[10][1])
+        return 10;
+    if (roman.startsWith(ROMAN_NUMERALS[1][5]))
+        return 5 + roman.length - 1;
 
-    if (roman.startsWith('V')) {
-        roman = roman.slice(1);
-        num += 5
-    };
-
-    switch (roman) {
-        case 'IV': return num + 4
-        case 'IX': return 9
-        case 'X': return 10
-        default: return num + roman.length;
-    };
+    return roman.length;
 };
