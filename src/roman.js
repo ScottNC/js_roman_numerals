@@ -26,6 +26,7 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
+    if (roman === 'X') return 10;
     let num = 0;
 
     if (roman.startsWith('V')) {

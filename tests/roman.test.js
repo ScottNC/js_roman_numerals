@@ -96,9 +96,9 @@ describe("romanToNum", () => {
         expect(romanToNum('VIII')).toBe(8);
     });
 
-    // test('X returns 10', () => {
-    //     expect(romanToNum('X')).toBe(10);
-    // });
+    test('X returns 10', () => {
+        expect(romanToNum('X')).toBe(10);
+    });
 
     // test('IX returns 9', () => {
     //     expect(romanToNum('IX')).toBe(9);
