@@ -44,5 +44,10 @@ test('multiples of ten', () => {
     expect(numToRoman(80)).toBe('LXXX');
 });
 
+test('90 to return XC', () => {
+    expect(numToRoman(90)).toBe('XC');
+});
+
+
 
 
