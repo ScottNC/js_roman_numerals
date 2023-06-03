@@ -48,6 +48,14 @@ test('90 to return XC', () => {
     expect(numToRoman(90)).toBe('XC');
 });
 
+test('10n + a', () => {
+    expect(numToRoman(13)).toBe('XIII');
+    expect(numToRoman(15)).toBe('XV');
+    expect(numToRoman(37)).toBe('XXXVII');
+    expect(numToRoman(84)).toBe('LXXXIV');
+    expect(numToRoman(99)).toBe('XCIX');
+});
+
 
 
 
