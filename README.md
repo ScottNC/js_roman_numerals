@@ -16,6 +16,8 @@ Test Cases:
 
 10. multiples of ten
 
-11. 10n + 1 => 10n + 9
+11. 10n + a
 
-12. numbers between 50 and 100
+12. multiples of 100
+
+13. 100n + a

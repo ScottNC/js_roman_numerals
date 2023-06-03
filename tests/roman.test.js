@@ -56,6 +56,13 @@ test('10n + a', () => {
     expect(numToRoman(99)).toBe('XCIX');
 });
 
-
+test('multiples of 100', () => {
+    expect(numToRoman(100)).toBe('C');
+    expect(numToRoman(300)).toBe('CCC');
+    expect(numToRoman(500)).toBe('D');
+    expect(numToRoman(700)).toBe('DCC');
+    expect(numToRoman(900)).toBe('CM');
+    expect(numToRoman(1000)).toBe('M');
+})
 
 

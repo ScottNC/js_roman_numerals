@@ -2,6 +2,7 @@ const ROMAN_NUMERALS = {
     1: {1: 'I', 5: 'V'},
     10: {1: 'X', 5: 'L'},
     100: {1: 'C', 5: 'D'},
+    1000: {1: 'M'}
 };
 
 export function numToRoman(num) {
