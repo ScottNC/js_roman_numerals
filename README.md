@@ -13,3 +13,9 @@ Test Cases:
 
 8. 10 returns "X"
 9. 9 returns "IX"
+
+10. multiples of ten
+
+11. 10n + 1 => 10n + 9
+
+12. numbers between 50 and 100

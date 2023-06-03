@@ -36,5 +36,13 @@ test('9 returns IX', () => {
     expect(numToRoman(9)).toBe('IX');
 });
 
+test('multiples of ten', () => {
+    expect(numToRoman(20)).toBe('XX');
+    expect(numToRoman(40)).toBe('XL');
+    expect(numToRoman(50)).toBe('L');
+    expect(numToRoman(60)).toBe('LX');
+    expect(numToRoman(80)).toBe('LXXX');
+});
+
 
 
