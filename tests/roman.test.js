@@ -80,9 +80,9 @@ describe("romanToNum", () => {
         expect(romanToNum('III')).toBe(3);
     });
 
-    // test('V returns 5', () => {
-    //     expect(romanToNum('V')).toBe(5);
-    // });
+    test('V returns 5', () => {
+        expect(romanToNum('V')).toBe(5);
+    });
 
     // test('IV returns 4', () => {
     //     expect(romanToNum('IV')).toBe(4);
