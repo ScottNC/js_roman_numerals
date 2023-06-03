@@ -112,9 +112,9 @@ describe("romanToNum", () => {
         expect(romanToNum('LXXX')).toBe(80);
     });
 
-    // test('XC returns 90', () => {
-    //     expect(romanToNum('XC')).toBe(90);
-    // });
+    test('XC returns 90', () => {
+        expect(romanToNum('XC')).toBe(90);
+    });
 
     // test('10n + a', () => {
     //     expect(romanToNum('XIII')).toBe(13);
