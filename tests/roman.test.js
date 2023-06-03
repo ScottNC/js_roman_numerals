@@ -124,12 +124,12 @@ describe("romanToNum", () => {
         expect(romanToNum('XCIX')).toBe(99);
     });
 
-    // test('multiples of 100', () => {
-    //     expect(romanToNum('C')).toBe(100);
-    //     expect(romanToNum('CCC')).toBe(300);
-    //     expect(romanToNum('D')).toBe(500);
-    //     expect(romanToNum('DCC')).toBe(700);
-    //     expect(romanToNum('CM')).toBe(900);
-    //     expect(romanToNum('M')).toBe(1000);
-    // });
+    test('multiples of 100', () => {
+        expect(romanToNum('C')).toBe(100);
+        expect(romanToNum('CCC')).toBe(300);
+        expect(romanToNum('D')).toBe(500);
+        expect(romanToNum('DCC')).toBe(700);
+        expect(romanToNum('CM')).toBe(900);
+        expect(romanToNum('M')).toBe(1000);
+    });
 });

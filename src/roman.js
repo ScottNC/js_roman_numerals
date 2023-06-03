@@ -5,10 +5,10 @@ const ROMAN_NUMERALS = {
     1000: {1: 'M'}
 };
 
-export function numToRoman(num) {
-    const powersOfTen = Object.keys(ROMAN_NUMERALS).sort((a, b) => b - a);
+const POWERS_OF_TEN = Object.keys(ROMAN_NUMERALS).sort((a, b) => b - a);
 
-    return powersOfTen.reduce((roman, power) => {
+export function numToRoman(num) {
+    return POWERS_OF_TEN.reduce((roman, power) => {
         let x = Math.floor(num / power);
         num -= power * x;
 
@@ -26,9 +26,7 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    const powersOfTen = Object.keys(ROMAN_NUMERALS).sort((a, b) => b - a).slice(1);
-
-    return powersOfTen.reduce((num, power) => {
+    return POWERS_OF_TEN.reduce((num, power) => {
         const firstOne = roman.indexOf(ROMAN_NUMERALS[power/10]?.[1]);
         const firstFive = roman.indexOf(ROMAN_NUMERALS[power/10]?.[5]);
 
@@ -49,12 +47,13 @@ export function romanToNum(roman) {
             else if (currentRoman.startsWith(ROMAN_NUMERALS[power][5]))
                 num += (5 + currentRoman.length - 1);
             else
-                num += currentRoman.length;
+                num += currentRoman.length
 
             roman = roman.slice(cutOff);
+            num *= power;
         }
 
-        return num * power;
+        return num;
     }, 0)
 };
 
