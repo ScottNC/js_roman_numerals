@@ -43,18 +43,18 @@ export function romanToNum(roman) {
             }
 
             if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
-                num += 4 * power;
+                num += 4;
             else if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
-                num += 9 * power;
+                num += 9;
             else if (currentRoman.startsWith(ROMAN_NUMERALS[power][5]))
-                num += (5 + currentRoman.length - 1) * power;
+                num += (5 + currentRoman.length - 1);
             else
-                num += currentRoman.length * power;
+                num += currentRoman.length;
 
             roman = roman.slice(cutOff);
         }
 
-        return num;
+        return num * power;
     }, 0)
 };
 
