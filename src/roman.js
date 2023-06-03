@@ -27,33 +27,38 @@ export function numToRoman(num) {
 
 export function romanToNum(roman) {
     return POWERS_OF_TEN.reduce((num, power) => {
-        const firstOne = roman.indexOf(ROMAN_NUMERALS[power/10]?.[1]);
-        const firstFive = roman.indexOf(ROMAN_NUMERALS[power/10]?.[5]);
 
         if (Object.values(ROMAN_NUMERALS[power]).includes(roman[0])) {
-            let currentRoman = roman;
-
-            let cutOff;
-
-            if (firstOne !== firstFive) {
-                cutOff = (firstFive * firstOne > 0) ? Math.min(firstOne, firstFive) : Math.max(firstOne, firstFive);
-                currentRoman = roman.slice(0, cutOff);
-            }
+            
+            const cutOff= findCutOff(roman, power);
+            const currentRoman = roman.slice(0, cutOff);
 
             if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
-                num += 4;
+                num += 4 * power;
             else if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
-                num += 9;
+                num += 9 * power;
             else if (currentRoman.startsWith(ROMAN_NUMERALS[power][5]))
-                num += (5 + currentRoman.length - 1);
+                num += (5 + currentRoman.length - 1) * power;
             else
-                num += currentRoman.length
+                num += currentRoman.length * power
 
-            roman = roman.slice(cutOff);
-            num *= power;
+            roman = roman.slice(cutOff);;
         }
 
         return num;
     }, 0)
 };
+
+function findCutOff (roman, power) {
+    while (power > 1) {
+        power /= 10;
+        const firstOne = roman.indexOf(ROMAN_NUMERALS[power]?.[1]);
+        const firstFive = roman.indexOf(ROMAN_NUMERALS[power]?.[5]);
+        if (firstFive !== firstOne)
+            return (firstFive * firstOne > 0) ? Math.min(firstOne, firstFive) : Math.max(firstOne, firstFive);
+        
+    }
+
+    return roman.length;
+}
 

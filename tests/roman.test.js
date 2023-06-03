@@ -140,4 +140,12 @@ describe("romanToNum", () => {
         expect(romanToNum('CM')).toBe(900);
         expect(romanToNum('M')).toBe(1000);
     });
+
+    test('100n + a', () => {
+        expect(romanToNum('CIV')).toBe(104);
+        expect(romanToNum('CDL')).toBe(450);
+        expect(romanToNum('DXXXI')).toBe(531);
+        expect(romanToNum('DCLXXXVII')).toBe(687);
+        expect(romanToNum('CMXCIX')).toBe(999);
+    });
 });
