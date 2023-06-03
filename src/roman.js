@@ -26,7 +26,6 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    if (roman === 'X') return 10;
     let num = 0;
 
     if (roman.startsWith('V')) {
@@ -36,6 +35,8 @@ export function romanToNum(roman) {
 
     switch (roman) {
         case 'IV': return num + 4
+        case 'IX': return 9
+        case 'X': return 10
         default: return num + roman.length;
     };
 };
