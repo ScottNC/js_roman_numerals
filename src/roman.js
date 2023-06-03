@@ -26,5 +26,9 @@ export function numToRoman(num) {
 };
 
 export function romanToNum(roman) {
-    return roman === 'V' ? 5 : roman.length;
-}
+    switch (roman) {
+        case 'IV': return 4
+        case 'V': return 5
+        default: return roman.length;
+    };
+};
