@@ -30,17 +30,33 @@ export function romanToNum(roman) {
     let num = 0;
 
     powersOfTen.forEach(power => {
+        const firstOne = roman.indexOf(ROMAN_NUMERALS[power/10]?.[1]);
+        const firstFive = roman.indexOf(ROMAN_NUMERALS[power/10]?.[5]);
+
         if (roman.startsWith(ROMAN_NUMERALS[power][1]) || roman.startsWith(ROMAN_NUMERALS[power][5]) ) {
-            if (roman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
+            let currentRoman = roman;
+
+            let cutOff;
+
+            if (firstOne !== firstFive) {
+                cutOff = (firstFive * firstOne > 0) ? Math.min(firstOne, firstFive) : Math.max(firstOne, firstFive);
+                currentRoman = roman.slice(0, cutOff);
+            }
+
+            console.log(currentRoman, firstFive, firstOne);
+            if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
                 num += 4 * power;
-            else if (roman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
+            else if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[10 * power]?.[1])
                 num += 9 * power;
-            else if (roman.startsWith(ROMAN_NUMERALS[power][5]))
-                num += (5 + roman.length - 1) * power;
+            else if (currentRoman.startsWith(ROMAN_NUMERALS[power][5]))
+                num += (5 + currentRoman.length - 1) * power;
             else
-                num += roman.length * power;
+                num += currentRoman.length * power;
+
+            roman = roman.slice(cutOff);
         }
     })
 
     return num;
 };
+

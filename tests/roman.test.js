@@ -116,13 +116,13 @@ describe("romanToNum", () => {
         expect(romanToNum('XC')).toBe(90);
     });
 
-    // test('10n + a', () => {
-    //     expect(romanToNum('XIII')).toBe(13);
-    //     expect(romanToNum('XV')).toBe(15);
-    //     expect(romanToNum('XXXVII')).toBe(37);
-    //     expect(romanToNum('LXXXIV')).toBe(84);
-    //     expect(romanToNum('XCIX')).toBe(99);
-    // });
+    test('10n + a', () => {
+        expect(romanToNum('XIII')).toBe(13);
+        expect(romanToNum('XV')).toBe(15);
+        expect(romanToNum('XXXVII')).toBe(37);
+        expect(romanToNum('LXXXIV')).toBe(84);
+        expect(romanToNum('XCIX')).toBe(99);
+    });
 
     // test('multiples of 100', () => {
     //     expect(romanToNum('C')).toBe(100);
