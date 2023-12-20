@@ -148,4 +148,8 @@ describe("romanToNum", () => {
         expect(romanToNum('DCLXXXVII')).toBe(687);
         expect(romanToNum('CMXCIX')).toBe(999);
     });
+
+    test('1000n + a', () => {
+        expect(romanToNum('MMMXCVIII')).toBe(3098);
+    })
 });

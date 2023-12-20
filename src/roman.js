@@ -30,7 +30,12 @@ export function romanToNum(roman) {
 
         if (Object.values(ROMAN_NUMERALS[power]).includes(roman[0])) {
             
-            const cutOff= findCutOff(roman, power);
+            const ones = Object.entries(ROMAN_NUMERALS).filter(([k]) => k < power).map(([, v]) => v[1]);
+            const fives = Object.entries(ROMAN_NUMERALS).filter(([k]) => k < power).map(([, v]) => v[5]);
+
+            const idx = roman.split('').findIndex(i => [...ones, ...fives].includes(i));
+
+            const cutOff = idx + 1 ? idx : roman.length
             const currentRoman = roman.slice(0, cutOff);
 
             if (currentRoman === ROMAN_NUMERALS[power][1] + ROMAN_NUMERALS[power][5])
@@ -48,17 +53,3 @@ export function romanToNum(roman) {
         return num;
     }, 0);
 };
-
-function findCutOff (roman, power) {
-    while (power > 1) {
-        power /= 10;
-        const firstOne = roman.indexOf(ROMAN_NUMERALS[power]?.[1]);
-        const firstFive = roman.indexOf(ROMAN_NUMERALS[power]?.[5]);
-        if (firstFive !== firstOne)
-            return (firstFive * firstOne > 0) ? Math.min(firstOne, firstFive) : Math.max(firstOne, firstFive);
-        
-    }
-
-    return roman.length;
-}
-
